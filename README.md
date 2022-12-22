@@ -21,7 +21,7 @@ Use `<ng-template>` if your using card-crousel
 
 ## Example --
 ```sh
-<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"[customTemplate]="childTemplate">
+<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig" [customTemplate]="childTemplate">
     <ng-template #childTemplate>
         <ng-container *ngFor="let item of cardData">
             <div class="slide-card">
