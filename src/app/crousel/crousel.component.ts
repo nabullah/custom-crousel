@@ -88,7 +88,6 @@ export class CrouselComponent implements OnInit, AfterViewInit {
    * Click function for Next slide
    */
   nextSlide() {
-    
     if (this.curSlide === this.maxSlide) {
       this.curSlide = 0;
     } else {
@@ -96,9 +95,7 @@ export class CrouselComponent implements OnInit, AfterViewInit {
     }
     this.allSlides.forEach((slide: any, index: number) => {
       if ((this.carouselConfig?.transition?.translate != undefined && this.carouselConfig?.transition?.translate) || (this.carouselConfig?.transition?.fadeIn == undefined && this.setting?.transition?.translate)) {
-        if(this.curSlide != this.maxSlide){
-          slide.style.transform = `translateX(${100 * (index - this.curSlide)}%)`;
-        }
+        slide.style.transform = `translateX(${100 * (index - this.curSlide)}%)`;
       } else if ((this.carouselConfig?.transition?.fadeIn != undefined && this.carouselConfig?.transition?.translate == undefined) || (this.carouselConfig?.transition?.fadeIn == undefined && this.setting?.transition?.fadeIn)) {
         if (index == this.curSlide) {
           slide.style.opacity = 1;
