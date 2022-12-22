@@ -50,7 +50,7 @@ export class CrouselComponent implements OnInit, AfterViewInit {
     this.allSlides = document.querySelectorAll(".slide");
     this.dots = document.querySelectorAll(".dots-span");
     this.activeDot = document.querySelectorAll(".dots-active");
-    // this.allSlides[this.maxSlide - 1]
+    this.maxSlide = this.allSlides.length - 1;
     /**
      * Selectors for Card Carousel
      */
