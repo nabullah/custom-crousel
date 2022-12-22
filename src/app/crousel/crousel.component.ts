@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, HostListener, Input, OnInit, TemplateRef, ViewEncapsulation } from "@angular/core";
-import { Config, Slides } from "./model/interface";
+import { Config, Slides } from "./model";
 import { Configuration } from "./model/class";
 
 @Component({

@@ -5,7 +5,7 @@ import {
   Styling,
   Timer,
   Transition,
-} from '../model/interface';
+} from '.';
 
 /**
  * Default Configuration of the Crousel. Change at your own Risk
