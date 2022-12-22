@@ -8,17 +8,13 @@ import { CrouselComponent } from './crousel/crousel.component';
 import { SamplecrouselComponent } from './samplecrousel/samplecrousel.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CrouselComponent,
-    SamplecrouselComponent,
-  ],
+  declarations: [AppComponent, CrouselComponent, SamplecrouselComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     // CrouselModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

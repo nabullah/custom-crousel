@@ -1,35 +1,35 @@
-export interface Slides {
+export type Slides = {
   id: number;
   image: string;
-}
+};
 
-export interface Config {
+export type Config = {
   type?: CarouselType;
   dots?: Dots;
   setTimer?: Timer;
   transition?: Transition;
   styling?: Styling;
-}
+};
 
 /**
  * Control for Dots in Carousel
  * Dots is shown by default
  */
-export interface Dots {
+export type Dots = {
   /**
    * Disable dots and Show the image instead of dots
    * Boolean value
    */
   showImage?: boolean;
   show?: boolean;
-}
+};
 
 /**
  * Enable Timer at interval of 2 second
  * Slide is transitioned in every 3 second in forward direction
  * Disabled by default
  */
-export interface Timer {
+export type Timer = {
   /**
    * Set show : true in config to enable timer
    */
@@ -42,21 +42,21 @@ export interface Timer {
    * Set the direction of slide change
    */
   direction?: string;
-}
+};
 
 /**
  * Transition effect on slide change
  * Default transition effect is set to translate
  */
-export interface Transition {
+export type Transition = {
   fadeIn?: boolean;
   translate?: boolean;
-}
+};
 
 /**
  * Change styling Of Carousel
  */
-export interface Styling {
+export type Styling = {
   /**
    * Manipulate the border radius of Carousel
    */
@@ -73,12 +73,12 @@ export interface Styling {
    * Manipulate Dots and Image Dots Styles
    */
   dots?: DotStyles;
-}
+};
 
 /**
  * Change styling Of Arrow Buttons
  */
-export interface ButtonStyles {
+export type ButtonStyles = {
   /**
    * Hide Left and Right Buttons
    */
@@ -117,11 +117,11 @@ export interface ButtonStyles {
    * Change the font-size of the icons inside the buttons
    */
   fontSize?: string;
-}
+};
 /**
  * Change the Styling of dots or Image Dots
  */
-export interface DotStyles {
+export type DotStyles = {
   /**
    * Use border property with the dots or imageDots
    */
@@ -146,9 +146,12 @@ export interface DotStyles {
    * Change the background-color on hover over the dots
    */
   hoverDotsBackgroundColor?: string;
-}
+};
 
 /**
  * Select Type of Carousel
  */
 export type CarouselType = 'image' | 'card';
+
+// For Testing Porpose Only
+export const Greeter = (name: string) => `Hello ${name}`;

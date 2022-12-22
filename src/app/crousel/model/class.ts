@@ -1,11 +1,4 @@
-import {
-  CarouselType,
-  Config,
-  Dots,
-  Styling,
-  Timer,
-  Transition,
-} from '.';
+import { CarouselType, Config, Dots, Styling, Timer, Transition } from './typing';
 
 /**
  * Default Configuration of the Crousel. Change at your own Risk
@@ -41,16 +34,3 @@ export class Configuration {
     },
   };
 }
-
-// export class CarouselTypeClass {
-//   type = [
-//     {
-//       id: 1,
-//       type: 'image-carousel',
-//     },
-//     {
-//       id: 2,
-//       type: 'card-carousel',
-//     },
-//   ];
-// }

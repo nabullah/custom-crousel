@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, HostListener, Input, OnInit, TemplateRef, ViewEncapsulation } from "@angular/core";
-import { Config, Slides } from "./model";
-import { Configuration } from "./model/class";
+import { AfterViewInit, Component, HostListener, Input, OnInit, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { Config, Slides } from './model/typing';
+import { Configuration } from './model/class';
 
 @Component({
-  selector: "custom-crousel",
-  templateUrl: "./crousel.component.html",
-  styleUrls: ["./crousel.component.scss"],
+  selector: 'custom-crousel',
+  templateUrl: './crousel.component.html',
+  styleUrls: ['./crousel.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class CrouselComponent implements OnInit, AfterViewInit {
@@ -36,28 +36,30 @@ export class CrouselComponent implements OnInit, AfterViewInit {
   @Input() slidesData!: Slides[];
   @Input() carouselConfig!: Config;
   @Input() customTemplate!: TemplateRef<any>;
-  @HostListener("window:resize", ["$event"])
+  @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.windowSize = event.target.innerWidth;
     this.checkWidth();
   }
 
-  constructor() {}
+  constructor() {
+    // empty
+  }
   ngAfterViewInit(): void {
     /**
      * Selectors for Image Carousel
      */
-    this.allSlides = document.querySelectorAll(".slide");
-    this.dots = document.querySelectorAll(".dots-span");
-    this.activeDot = document.querySelectorAll(".dots-active");
+    this.allSlides = document.querySelectorAll('.slide');
+    this.dots = document.querySelectorAll('.dots-span');
+    this.activeDot = document.querySelectorAll('.dots-active');
     this.maxSlide = this.allSlides.length - 1;
     /**
      * Selectors for Card Carousel
      */
-    this.container = document.querySelectorAll("#container-fluid");
-    this.cardSlider = document.querySelectorAll("#card-slider");
-    this.cardSlides = document.querySelectorAll(".slide-card").length;
-    this.cardButtons = document.querySelectorAll(".card-buttons");
+    this.container = document.querySelectorAll('#container-fluid');
+    this.cardSlider = document.querySelectorAll('#card-slider');
+    this.cardSlides = document.querySelectorAll('.slide-card').length;
+    this.cardButtons = document.querySelectorAll('.card-buttons');
     this.slidesCount = this.cardSlides - this.slidesPerPage;
     this.containerWidth = this.container[0].offsetWidth;
     this.setParams(this.windowSize);
@@ -68,8 +70,11 @@ export class CrouselComponent implements OnInit, AfterViewInit {
     if (this.carouselConfig?.setTimer?.show) {
       this.autoChangeSlide(this.carouselConfig.setTimer.time!, this.carouselConfig.setTimer.direction!);
     }
-    if (this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor == undefined || this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor == null) {
-      this.hoverBackgroundColorDots = "red";
+    if (
+      this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor === undefined ||
+      this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor === null
+    ) {
+      this.hoverBackgroundColorDots = 'red';
     } else {
       this.hoverBackgroundColorDots = this.carouselConfig?.styling?.dots?.hoverDotsBackgroundColor!;
     }
@@ -94,10 +99,17 @@ export class CrouselComponent implements OnInit, AfterViewInit {
       this.curSlide++;
     }
     this.allSlides.forEach((slide: any, index: number) => {
-      if ((this.carouselConfig?.transition?.translate != undefined && this.carouselConfig?.transition?.translate) || (this.carouselConfig?.transition?.fadeIn == undefined && this.setting?.transition?.translate)) {
+      if (
+        (this.carouselConfig?.transition?.translate !== undefined && this.carouselConfig?.transition?.translate) ||
+        (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.translate)
+      ) {
         slide.style.transform = `translateX(${100 * (index - this.curSlide)}%)`;
-      } else if ((this.carouselConfig?.transition?.fadeIn != undefined && this.carouselConfig?.transition?.translate == undefined) || (this.carouselConfig?.transition?.fadeIn == undefined && this.setting?.transition?.fadeIn)) {
-        if (index == this.curSlide) {
+      } else if (
+        (this.carouselConfig?.transition?.fadeIn !== undefined &&
+          this.carouselConfig?.transition?.translate === undefined) ||
+        (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.fadeIn)
+      ) {
+        if (index === this.curSlide) {
           slide.style.opacity = 1;
         } else {
           slide.style.opacity = 0;
@@ -116,10 +128,17 @@ export class CrouselComponent implements OnInit, AfterViewInit {
       this.curSlide--;
     }
     this.allSlides.forEach((slide: any, index: any) => {
-      if ((this.carouselConfig?.transition?.translate != undefined && this.carouselConfig?.transition?.translate) || (this.carouselConfig?.transition?.fadeIn == undefined && this.setting?.transition?.translate)) {
+      if (
+        (this.carouselConfig?.transition?.translate !== undefined && this.carouselConfig?.transition?.translate) ||
+        (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.translate)
+      ) {
         slide.style.transform = `translateX(${100 * (index - this.curSlide)}%)`;
-      } else if ((this.carouselConfig?.transition?.fadeIn != undefined && this.carouselConfig?.transition?.translate == undefined) || (this.carouselConfig?.transition?.fadeIn == undefined && this.setting?.transition?.fadeIn)) {
-        if (index == this.curSlide) {
+      } else if (
+        (this.carouselConfig?.transition?.fadeIn !== undefined &&
+          this.carouselConfig?.transition?.translate === undefined) ||
+        (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.fadeIn)
+      ) {
+        if (index === this.curSlide) {
           slide.style.opacity = 1;
         } else {
           slide.style.opacity = 0;
@@ -137,39 +156,39 @@ export class CrouselComponent implements OnInit, AfterViewInit {
 
   autoChangeSlide(time: number, direction: string) {
     // Both time and direction is given
-    if (time != null && time != undefined && direction != null && direction != undefined) {
+    if (time !== null && time !== undefined && direction !== null && direction !== undefined) {
       const timeInmilliSec = time * 1000;
-      if (direction == "backword") {
+      if (direction === 'backword') {
         setInterval(() => {
           this.previousSlide();
         }, timeInmilliSec);
-      } else if (direction == "forward") {
+      } else if (direction === 'forward') {
         setInterval(() => {
           this.nextSlide();
         }, timeInmilliSec);
       }
       // Only Direction is given
-    } else if (direction != null && direction != undefined) {
+    } else if (direction !== null && direction !== undefined) {
       const timer = this.setting.setTimer.time!;
       const timeInmilliSec = timer * 1000;
-      if (direction == "backword") {
+      if (direction === 'backword') {
         setInterval(() => {
           this.previousSlide();
         }, timeInmilliSec);
-      } else if (direction == "forward") {
+      } else if (direction === 'forward') {
         setInterval(() => {
           this.nextSlide();
         }, timeInmilliSec);
       }
       // Only Time is Given
-    } else if (time != null && time != undefined) {
+    } else if (time !== null && time !== undefined) {
       const direction = this.setting.setTimer.direction!;
       const timeInmilliSec = time * 1000;
-      if (direction == "backword") {
+      if (direction === 'backword') {
         setInterval(() => {
           this.previousSlide();
         }, timeInmilliSec);
-      } else if (direction == "forward") {
+      } else if (direction === 'forward') {
         setInterval(() => {
           this.nextSlide();
         }, timeInmilliSec);
@@ -179,11 +198,11 @@ export class CrouselComponent implements OnInit, AfterViewInit {
       const timer = this.setting.setTimer.time!;
       const direction = this.setting.setTimer.direction;
       const timeInmilliSec = timer * 1000;
-      if (direction == "backword") {
+      if (direction === 'backword') {
         setInterval(() => {
           this.previousSlide();
         }, timeInmilliSec);
-      } else if (direction == "forward") {
+      } else if (direction === 'forward') {
         setInterval(() => {
           this.nextSlide();
         }, timeInmilliSec);
@@ -199,10 +218,17 @@ export class CrouselComponent implements OnInit, AfterViewInit {
   goToSlide(indx: number) {
     this.curSlide = indx;
     this.allSlides.forEach((slide: any, index: any) => {
-      if ((this.carouselConfig?.transition?.translate != undefined && this.carouselConfig?.transition?.translate) || (this.carouselConfig?.transition?.fadeIn == undefined && this.setting?.transition?.translate)) {
+      if (
+        (this.carouselConfig?.transition?.translate !== undefined && this.carouselConfig?.transition?.translate) ||
+        (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.translate)
+      ) {
         slide.style.transform = `translateX(${100 * (index - this.curSlide)}%)`;
-      } else if ((this.carouselConfig?.transition?.fadeIn != undefined && this.carouselConfig?.transition?.translate == undefined) || (this.carouselConfig?.transition?.fadeIn == undefined && this.setting?.transition?.fadeIn)) {
-        if (index == this.curSlide) {
+      } else if (
+        (this.carouselConfig?.transition?.fadeIn !== undefined &&
+          this.carouselConfig?.transition?.translate === undefined) ||
+        (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.fadeIn)
+      ) {
+        if (index === this.curSlide) {
           slide.style.opacity = 1;
         } else {
           slide.style.opacity = 0;
@@ -217,7 +243,10 @@ export class CrouselComponent implements OnInit, AfterViewInit {
    * @param index
    */
   mouseEnterDots(index: any) {
-    if (this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor != undefined || this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor != null) {
+    if (
+      this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor !== undefined ||
+      this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor !== null
+    ) {
       this.dots[index].style.backgroundColor = this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor;
     } else {
       this.dots[index].style.backgroundColor = this.setting.styling.dots?.hoverDotsBackgroundColor;
@@ -230,7 +259,10 @@ export class CrouselComponent implements OnInit, AfterViewInit {
    * @param index
    */
   mouseExitDots(index: any) {
-    if (this.carouselConfig.styling?.dots?.backgroundColor != undefined || this.carouselConfig.styling?.dots?.backgroundColor != null) {
+    if (
+      this.carouselConfig.styling?.dots?.backgroundColor !== undefined ||
+      this.carouselConfig.styling?.dots?.backgroundColor !== null
+    ) {
       this.dots[index].style.backgroundColor = this.carouselConfig.styling?.dots?.backgroundColor;
     } else {
       this.dots[index].style.backgroundColor = this.setting.styling.dots?.backgroundColor;
@@ -268,15 +300,15 @@ export class CrouselComponent implements OnInit, AfterViewInit {
       this.currentPosition -= this.slidesPerPage;
     }
     this.currentMargin = -this.currentPosition * (100 / this.slidesPerPage);
-    this.cardSlider[0].style.marginLeft = this.currentMargin + "%";
+    this.cardSlider[0].style.marginLeft = this.currentMargin + '%';
     if (this.currentPosition > 0) {
-      this.cardButtons[0].classList.remove("inactive");
+      this.cardButtons[0].classList.remove('inactive');
     }
     if (this.currentPosition < this.slidesCount) {
-      this.cardButtons[1].classList.remove("inactive");
+      this.cardButtons[1].classList.remove('inactive');
     }
     if (this.currentPosition >= this.slidesCount) {
-      this.cardButtons[1].classList.add("inactive");
+      this.cardButtons[1].classList.add('inactive');
     }
   }
 
@@ -284,28 +316,28 @@ export class CrouselComponent implements OnInit, AfterViewInit {
    * Slide left button for Card Carousel
    */
   slideLeft() {
-    if (this.currentPosition != 0) {
-      this.cardSlider[0].style.marginLeft = this.currentMargin + 100 / this.slidesPerPage + "%";
+    if (this.currentPosition !== 0) {
+      this.cardSlider[0].style.marginLeft = this.currentMargin + 100 / this.slidesPerPage + '%';
       this.currentMargin += 100 / this.slidesPerPage;
       this.currentPosition--;
     }
     if (this.currentPosition <= 0 && this.currentPositionMobile <= 1) {
-      this.cardButtons[0].classList.add("inactive");
+      this.cardButtons[0].classList.add('inactive');
     }
     if (this.currentPosition < this.slidesCount && this.currentPositionMobile > 1) {
-      this.cardButtons[1].classList.remove("inactive");
+      this.cardButtons[1].classList.remove('inactive');
     }
     if (window.innerWidth < 551) {
-      if (this.currentPositionMobile <= this.cardSlides && this.currentMarginMobile != 0) {
+      if (this.currentPositionMobile <= this.cardSlides && this.currentMarginMobile !== 0) {
         this.cardSlider[0].style.marginLeft = `${this.currentMarginMobile + 100}%`;
         this.currentMarginMobile = this.currentMarginMobile + 100;
         this.currentPositionMobile--;
       }
-      if (this.currentPositionMobile == 1 || this.currentPositionMobile >= this.cardSlides) {
-        this.cardButtons[0].classList.add("inactive");
+      if (this.currentPositionMobile === 1 || this.currentPositionMobile >= this.cardSlides) {
+        this.cardButtons[0].classList.add('inactive');
       }
       if (this.currentPositionMobile >= 1) {
-        this.cardButtons[1].classList.remove("inactive");
+        this.cardButtons[1].classList.remove('inactive');
       }
     }
   }
@@ -314,16 +346,16 @@ export class CrouselComponent implements OnInit, AfterViewInit {
    * Slide Right button for Card Carousel
    */
   slideRight() {
-    if (this.currentPosition != this.slidesCount && !(window.innerWidth < 551)) {
-      this.cardSlider[0].style.marginLeft = this.currentMargin - 100 / this.slidesPerPage + "%";
+    if (this.currentPosition !== this.slidesCount && !(window.innerWidth < 551)) {
+      this.cardSlider[0].style.marginLeft = this.currentMargin - 100 / this.slidesPerPage + '%';
       this.currentMargin -= 100 / this.slidesPerPage;
       this.currentPosition++;
     }
-    if (this.currentPosition == this.slidesCount) {
-      this.cardButtons[1].classList.add("inactive");
+    if (this.currentPosition === this.slidesCount) {
+      this.cardButtons[1].classList.add('inactive');
     }
     if (this.currentPosition > 0) {
-      this.cardButtons[0].classList.remove("inactive");
+      this.cardButtons[0].classList.remove('inactive');
     }
 
     if (window.innerWidth < 551) {
@@ -332,11 +364,11 @@ export class CrouselComponent implements OnInit, AfterViewInit {
         this.currentMarginMobile = this.currentMarginMobile - 100;
         this.currentPositionMobile++;
       }
-      if (this.currentPositionMobile == this.cardSlides) {
-        this.cardButtons[0].classList.add("inactive");
+      if (this.currentPositionMobile === this.cardSlides) {
+        this.cardButtons[0].classList.add('inactive');
       }
       if (this.currentPositionMobile <= this.cardSlides) {
-        this.cardButtons[1].classList.remove("inactive");
+        this.cardButtons[1].classList.remove('inactive');
       }
     }
   }
