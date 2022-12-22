@@ -4,7 +4,9 @@
 
 ## Copy "crousel" folder in your Project and use
 
-##use selector `<custom-crousel></custom-crousel>`
+## Use selector `<custom-crousel></custom-crousel>`
+
+## Import `CrouselComponent` in your module.ts
 
 ## [slidesData] to insert Data in crousel
 
