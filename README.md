@@ -31,28 +31,31 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 -- Bootstrap Icons v1.10.2
 
-## Copy "crousel" folder in your Project and use
+## USE --  
+Copy "crousel" folder in your Project and use 
 
-## Use selector `<custom-crousel></custom-crousel>`
+Use selector `<custom-crousel></custom-crousel>` 
 
-## Import `CrouselComponent` in your module.ts
+Import `CrouselComponent` in your module.ts 
 
-## [slidesData] to insert Data in crousel
+`[slidesData]` to insert Data in crousel 
 
-## [carouselConfig] to use its COnfiguration
+`[carouselConfig]` to use its COnfiguration 
 
-## Use ng-template if your using card-crousel 
-Example   <ng-template #childTemplate>
-        <ng-container *ngFor="let item of cardData">
-            <div class="slide-card">
-                <!-- Changeable  -->
-                <span>{{item}}</span>
-            </div>
-        </ng-container>
-    </ng-template>
+Use `<ng-template>` if your using card-crousel 
 
+Example --
+```sh
+<ng-template #childTemplate>
+    <ng-container *ngFor="let item of cardData">
+        <div class="slide-card">
+        <!-- code here  -->
+        </div>
+    </ng-container>
+</ng-template>
+```
 Exapmle Config
-
+```sh
 carouselConfig: Configuration = {
     type: 'card',
     dots: {
@@ -91,9 +94,10 @@ carouselConfig: Configuration = {
         hoverDotsBackgroundColor: '#254125',
       },
     },
-
+```
 --Example Card Crousel 
     `<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"[customTemplate]="childTemplate"></custom-crousel>`
+   ```sh
     <ng-template #childTemplate>
         <ng-container *ngFor="let item of cardData">
             <div class="slide-card">
@@ -102,7 +106,7 @@ carouselConfig: Configuration = {
             </div>
         </ng-container>
     </ng-template>
-
+```
 --Example Image Crousel
 `<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"></custom-crousel>`
 
