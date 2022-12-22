@@ -22,7 +22,7 @@ export class SamplecrouselComponent implements OnInit {
       // showImage: true,
     },
     setTimer: {
-      show:true,
+      show: true,
       time: 3,
       // direction: 'backword',
     },
