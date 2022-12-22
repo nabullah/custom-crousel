@@ -21,13 +21,15 @@ Use `<ng-template>` if your using card-crousel
 
 ## Example --
 ```sh
-<ng-template #childTemplate>
-    <ng-container *ngFor="let item of cardData">
-        <div class="slide-card">
-        <!-- code here  -->
-        </div>
-    </ng-container>
-</ng-template>
+<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"[customTemplate]="childTemplate">
+    <ng-template #childTemplate>
+        <ng-container *ngFor="let item of cardData">
+            <div class="slide-card">
+            <!-- code here  -->
+            </div>
+        </ng-container>
+    </ng-template>
+</custom-crousel>
 ```
 Exapmle Config
 ```sh
@@ -73,6 +75,7 @@ carouselConfig: Configuration = {
 ## Example Card Crousel 
     `<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"[customTemplate]="childTemplate"></custom-crousel>`
    ```sh
+
     <ng-template #childTemplate>
         <ng-container *ngFor="let item of cardData">
             <div class="slide-card">
