@@ -59,8 +59,6 @@ export class CrouselComponent implements OnInit, AfterViewInit {
     this.cardSlides = document.querySelectorAll(".slide-card").length;
     this.cardButtons = document.querySelectorAll(".card-buttons");
     this.slidesCount = this.cardSlides - this.slidesPerPage;
-    this.containerWidth = this.container[0].offsetWidth;
-    this.setParams(this.windowSize);
 
     /**
      * Timer Setting
@@ -74,8 +72,11 @@ export class CrouselComponent implements OnInit, AfterViewInit {
       this.hoverBackgroundColorDots = this.carouselConfig?.styling?.dots?.hoverDotsBackgroundColor!;
     }
 
-    // console.log('carouselConfig', this.carouselConfig);
-    // console.log('Configuration', Configuration);
+    console.log("carouselConfig", this.carouselConfig);
+    console.log("Configuration", Configuration);
+
+    this.containerWidth = this.container[0].offsetWidth;
+    this.setParams(this.windowSize);
   }
   ngOnInit(): void {
     /**
