@@ -13,8 +13,8 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run lint",
-    "preversion": "npm run lint",
+    "prepublishOnly": "",
+    "preversion": "",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
@@ -22,7 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/nabullah/custom-crousel.git"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~13.2.0",
     "@angular/common": "~13.2.0",
