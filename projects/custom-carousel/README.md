@@ -7,6 +7,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 -- Bootstrap Icons v1.10.2
 
 ## USE --  
+
+Add `import { CustomCarouselModule } from 'custom-carousel';` in you module.
+
+Import `CustomCarouselModule` in Imports
+
 Copy "crousel" folder in your Project and use 
 
 Use selector `<custom-crousel></custom-crousel>` 

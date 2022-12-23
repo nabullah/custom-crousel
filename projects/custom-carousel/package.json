@@ -1,9 +1,27 @@
 {
   "name": "custom-carousel",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
+  },
+  "author": "Nabullah Ansari",
+  "keywords": [
+    "nabullah",
+    "custom carousel",
+    "carouselv2",
+    "custom-carouselv2",
+    "custom-carousel",
+    "customcarousel",
+    "custom crousel",
+    "crouselv2",
+    "custom-crouselv2",
+    "custom-crousel",
+    "customcrousel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabullah/custom-crousel.git"
   },
   "dependencies": {
     "tslib": "^2.3.0"
