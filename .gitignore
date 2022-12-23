@@ -1,3 +1,4 @@
 node_modules
 .angular
 /lib
+/projects/custom-crouselv2/dist

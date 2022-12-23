@@ -1,19 +1,10 @@
 {
   "name": "custom-crouselv2",
-  "version": "0.0.5",
+  "version": "0.0.11",
   "description": "Light Weight Configurable Carousel",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
-  },
-  "scripts": {
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json",
-    "prepare": "ng build custom-crouselv2",
-    "prepublishOnly": "",
-    "preversion": "",
-    "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -23,7 +14,7 @@
     "tslib": "^2.3.0"
   },
   "files": [
-    "src"
+    "dist/**/*"
   ],
   "author": "Nabullah Ansari",
   "private": false,

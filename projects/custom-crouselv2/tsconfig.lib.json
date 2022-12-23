@@ -8,10 +8,8 @@
     "inlineSources": true,
     "types": []
   },
-  "include": ["./dist"],
   "exclude": [
     "src/test.ts",
-    "**/*.spec.ts",
-    "node_modules"
+    "**/*.spec.ts"
   ]
 }

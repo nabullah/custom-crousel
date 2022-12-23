@@ -1,35 +1,35 @@
-export type Slides = {
+export interface Slides {
   id: number;
   image: string;
-};
+}
 
-export type Config = {
+export interface Config {
   type?: CarouselType;
   dots?: Dots;
   setTimer?: Timer;
   transition?: Transition;
   styling?: Styling;
-};
+}
 
 /**
  * Control for Dots in Carousel
  * Dots is shown by default
  */
-export type Dots = {
+export interface Dots {
   /**
    * Disable dots and Show the image instead of dots
    * Boolean value
    */
   showImage?: boolean;
   show?: boolean;
-};
+}
 
 /**
  * Enable Timer at interval of 2 second
  * Slide is transitioned in every 3 second in forward direction
  * Disabled by default
  */
-export type Timer = {
+export interface Timer {
   /**
    * Set show : true in config to enable timer
    */
@@ -42,21 +42,21 @@ export type Timer = {
    * Set the direction of slide change
    */
   direction?: string;
-};
+}
 
 /**
  * Transition effect on slide change
  * Default transition effect is set to translate
  */
-export type Transition = {
+export interface Transition {
   fadeIn?: boolean;
   translate?: boolean;
-};
+}
 
 /**
  * Change styling Of Carousel
  */
-export type Styling = {
+export interface Styling {
   /**
    * Manipulate the border radius of Carousel
    */
@@ -73,12 +73,12 @@ export type Styling = {
    * Manipulate Dots and Image Dots Styles
    */
   dots?: DotStyles;
-};
+}
 
 /**
  * Change styling Of Arrow Buttons
  */
-export type ButtonStyles = {
+export interface ButtonStyles {
   /**
    * Hide Left and Right Buttons
    */
@@ -117,11 +117,11 @@ export type ButtonStyles = {
    * Change the font-size of the icons inside the buttons
    */
   fontSize?: string;
-};
+}
 /**
  * Change the Styling of dots or Image Dots
  */
-export type DotStyles = {
+export interface DotStyles {
   /**
    * Use border property with the dots or imageDots
    */
@@ -146,10 +146,9 @@ export type DotStyles = {
    * Change the background-color on hover over the dots
    */
   hoverDotsBackgroundColor?: string;
-};
+}
 
 /**
  * Select Type of Carousel
  */
 export type CarouselType = 'image' | 'card';
-
