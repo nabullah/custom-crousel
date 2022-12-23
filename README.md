@@ -1,25 +1,27 @@
 # Basic LightWeight Crousel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+Light Weight Configurable Carousel
 
 ## Dependency
 
 -- Bootstrap Icons v1.10.2
 
-## USE --  
-Copy "crousel" folder in your Project and use 
+## USE --
 
-Use selector `<custom-crousel></custom-crousel>` 
+Add `import { CustomCarouselModule } from 'custom-carousel';` in you module.
 
-Import `CrouselComponent` in your module.ts 
+Import `CustomCarouselModule` in Imports
 
-`[slidesData]` to insert Data in crousel 
+Use selector `<custom-crousel></custom-crousel>`
 
-`[carouselConfig]` to use its COnfiguration 
+`[slidesData]` to insert Data in crousel
 
-Use `<ng-template>` if your using card-crousel 
+`[carouselConfig]` to use its COnfiguration
+
+Use `<ng-template>` if your using card-crousel
 
 ## Example --
+
 ```sh
 <custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig" [customTemplate]="childTemplate">
     <ng-template #childTemplate>
@@ -31,7 +33,9 @@ Use `<ng-template>` if your using card-crousel
     </ng-template>
 </custom-crousel>
 ```
+
 Exapmle Config
+
 ```sh
 carouselConfig: Configuration = {
     type: 'card',
@@ -72,23 +76,27 @@ carouselConfig: Configuration = {
       },
     },
 ```
-## Example Card Crousel 
-    `<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"[customTemplate]="childTemplate"></custom-crousel>`
-   ```sh
 
-    <ng-template #childTemplate>
-        <ng-container *ngFor="let item of cardData">
-            <div class="slide-card">
-                <!-- Changeable  -->
-                <span>{{item}}</span>
-            </div>
-        </ng-container>
-    </ng-template>
+## Example Card Crousel
+
+    `<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"[customTemplate]="childTemplate"></custom-crousel>`
+
+```sh
+
+ <ng-template #childTemplate>
+     <ng-container *ngFor="let item of cardData">
+         <div class="slide-card">
+             <!-- Changeable  -->
+             <span>{{item}}</span>
+         </div>
+     </ng-container>
+ </ng-template>
 ```
+
 ## Example Image Crousel
+
 `<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"></custom-crousel>`
 
 ```sh
 ## You can take reference from samplecrousel component as example
 ```
-
