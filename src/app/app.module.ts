@@ -15,7 +15,7 @@ import { SamplecrouselComponent } from './samplecrousel/samplecrousel.component'
     AppRoutingModule,
     CommonModule,
     // CrouselModule
-    CustomCrouselv2Module
+    CustomCrouselv2Module,
   ],
   providers: [],
   bootstrap: [AppComponent],
