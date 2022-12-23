@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, HostListener, Input, OnInit, TemplateRef, ViewEncapsulation } from '@angular/core';
-import { Config, Slides } from './model/typing';
-import { Configuration } from './model/class';
+import { Config, Slides } from './model';
+import { Configuration } from './model/core';
 
 @Component({
   selector: 'custom-crousel',

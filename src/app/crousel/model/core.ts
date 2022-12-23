@@ -1,4 +1,4 @@
-import { CarouselType, Config, Dots, Styling, Timer, Transition } from './typing';
+import { CarouselType, Config, Dots, Styling, Timer, Transition } from '.';
 
 /**
  * Default Configuration of the Crousel. Change at your own Risk
