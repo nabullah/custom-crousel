@@ -3,6 +3,12 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "custom-crouselv2": [
+        "dist/custom-crouselv2/custom-crouselv2",
+        "dist/custom-crouselv2"
+      ]
+    },
     "outDir": "./lib",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -23,7 +29,6 @@
       "dom"
     ]
   },
-  "include": ["src/app/crousel"],
   "exclude": ["node_modules", "**/__tests__/*",".angular"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

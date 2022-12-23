@@ -1,70 +1,81 @@
+# Basic LightWeight Crousel
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+
 ## Dependency
 
 -- Bootstrap Icons v1.10.2
 
-## Copy "crousel" folder in your Project and use
+## USE --  
+Copy "crousel" folder in your Project and use 
 
-## Use selector `<custom-crousel></custom-crousel>`
+Use selector `<custom-crousel></custom-crousel>` 
 
-## Import `CrouselComponent` in your module.ts
+Import `CrouselComponent` in your module.ts 
 
-## [slidesData] to insert Data in crousel
+`[slidesData]` to insert Data in crousel 
 
-## [carouselConfig] to use its COnfiguration
+`[carouselConfig]` to use its COnfiguration 
 
-## Use ng-template if your using card-crousel 
-Example   <ng-template #childTemplate>
+Use `<ng-template>` if your using card-crousel 
+
+## Example --
+```sh
+<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig" [customTemplate]="childTemplate">
+    <ng-template #childTemplate>
         <ng-container *ngFor="let item of cardData">
             <div class="slide-card">
-                <!-- Changeable  -->
-                <span>{{item}}</span>
+            <!-- code here  -->
             </div>
         </ng-container>
     </ng-template>
-
+</custom-crousel>
+```
 Exapmle Config
-
+```sh
 carouselConfig: Configuration = {
     type: 'card',
     dots: {
       show: true,
-      // showImage: true,
+      showImage: true,
     },
     setTimer: {
-      // show:true,
-      // time: 3,
-      // direction: 'backword',
+      show:true,
+      time: 3,
+      direction: 'backword',
     },
     transition: {
-      // fadeIn: true,
+      fadeIn: true,
     },
     styling: {
-      // border:'2px solid red',
+      border:'2px solid red',
       borderRadius: '0px',
       button: {
-        // hideButton:true,
-        // backgroundColor: 'transparent',
-        // height:'80px',
-        // width:'80px',
-        // border:'1px solid red',
-        // borderRadius: '1px',
-        // color: 'green',
-        // fontSize: '24px',
-        // leftIcon: 'bi bi-arrow-left-circle',
-        // rightIcon: 'bi bi-arrow-right-circle',
+        hideButton:true,
+        backgroundColor: 'transparent',
+        height:'80px',
+        width:'80px',
+        border:'1px solid red',
+        borderRadius: '1px',
+        color: 'green',
+        fontSize: '24px',
+        leftIcon: 'bi bi-arrow-left-circle',
+        rightIcon: 'bi bi-arrow-right-circle',
       },
       dots: {
-        // border: '1px solid red',
+        border: '1px solid red',
         borderRadius: '0px',
-        // backgroundColor: '#000000',
-        // height:'40px',
-        // width:'40px'
+        backgroundColor: '#000000',
+        height:'40px',
+        width:'40px'
         hoverDotsBackgroundColor: '#254125',
       },
     },
-
---Example Card Crousel 
+```
+## Example Card Crousel 
     `<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"[customTemplate]="childTemplate"></custom-crousel>`
+   ```sh
+
     <ng-template #childTemplate>
         <ng-container *ngFor="let item of cardData">
             <div class="slide-card">
@@ -73,6 +84,11 @@ carouselConfig: Configuration = {
             </div>
         </ng-container>
     </ng-template>
-
---Example Image Crousel
+```
+## Example Image Crousel
 `<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"></custom-crousel>`
+
+```sh
+## You can take reference from samplecrousel component as example
+```
+

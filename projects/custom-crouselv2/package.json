@@ -1,0 +1,31 @@
+{
+  "name": "custom-crouselv2",
+  "version": "0.0.1",
+  "description": "Light Weight Configurable Carousel",
+  "peerDependencies": {
+    "@angular/common": "^13.2.0",
+    "@angular/core": "^13.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabullah/custom-crousel.git"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "author": "Nabullah Ansari",
+  "private": false,
+  "keywords": [
+    "nabullah",
+    "custom carousel",
+    "carouselv2",
+    "custom-carouselv2",
+    "custom-carousel",
+    "customcarousel",
+    "custom crousel",
+    "crouselv2",
+    "custom-crouselv2",
+    "custom-crousel",
+    "customcrousel"
+  ]
+}
