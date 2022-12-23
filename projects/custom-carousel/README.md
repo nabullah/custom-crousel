@@ -12,11 +12,7 @@ Add `import { CustomCarouselModule } from 'custom-carousel';` in you module.
 
 Import `CustomCarouselModule` in Imports
 
-Copy "crousel" folder in your Project and use 
-
 Use selector `<custom-crousel></custom-crousel>` 
-
-Import `CrouselComponent` in your module.ts 
 
 `[slidesData]` to insert Data in crousel 
 
