@@ -1,6 +1,7 @@
 {
   "name": "custom-crousel",
   "version": "0.0.0",
+  "description": "Light Weight Configurable Carousel",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -25,6 +26,27 @@
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
+  "files": [
+    "dist/**/*"
+  ],
+  "author": "Nabullah Ansari",
+  "keywords": [
+    "nabullah",
+    "custom carousel",
+    "carouselv2",
+    "custom-carouselv2",
+    "custom-carousel",
+    "customcarousel",
+    "custom crousel",
+    "crouselv2",
+    "custom-crouselv2",
+    "custom-crousel",
+    "customcrousel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabullah/custom-crousel.git"
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.2",
     "@angular/cli": "~13.2.2",
@@ -37,6 +59,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "ng-packagr": "^13.0.0",
     "typescript": "~4.5.2"
   }
 }

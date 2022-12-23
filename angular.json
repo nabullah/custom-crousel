@@ -112,6 +112,37 @@
           }
         }
       }
+    },
+    "custom-carousel": {
+      "projectType": "library",
+      "root": "projects/custom-carousel",
+      "sourceRoot": "projects/custom-carousel/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/custom-carousel/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/custom-carousel/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/custom-carousel/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/custom-carousel/src/test.ts",
+            "tsConfig": "projects/custom-carousel/tsconfig.spec.json",
+            "karmaConfig": "projects/custom-carousel/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "custom-crousel"
