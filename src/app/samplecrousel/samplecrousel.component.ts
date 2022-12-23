@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Configuration } from '../crousel/model/class';
+import { Configuration } from 'projects/custom-carousel/src/model/class';
 
 @Component({
   selector: 'app-samplecrousel',
