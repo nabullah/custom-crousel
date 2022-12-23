@@ -5,7 +5,6 @@ import { CustomCrouselv2Module } from 'projects/custom-crouselv2/src/public-api'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CrouselComponent } from './crousel/crousel.component';
 // import { CrouselModule } from './crousel/crousel.module';
 import { SamplecrouselComponent } from './samplecrousel/samplecrousel.component';
 
