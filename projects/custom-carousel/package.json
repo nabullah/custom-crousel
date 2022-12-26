@@ -5,6 +5,7 @@
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
   },
+  "private": false,
   "author": "Nabullah Ansari",
   "keywords": [
     "nabullah",
