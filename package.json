@@ -1,6 +1,6 @@
 {
   "name": "custom-crousel",
-  "version": "0.0.0",
+  "version": "0.0.7",
   "description": "Light Weight Configurable Carousel",
   "scripts": {
     "ng": "ng",
@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~13.2.0",
     "@angular/common": "~13.2.0",
@@ -27,7 +27,7 @@
     "zone.js": "~0.11.4"
   },
   "files": [
-    "dist/**/*"
+    "projects/custom-carousel/dist/**/*"
   ],
   "author": "Nabullah Ansari",
   "keywords": [
