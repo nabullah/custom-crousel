@@ -8,15 +8,15 @@ Light Weight Configurable Carousel
 
 ## USE --
 
-Add `import { CustomCarouselModule } from 'custom-carousel';` in you module.
+Add `import { CustomCarouselModule } from 'custom-carousel'` in you module.
 
 Import `CustomCarouselModule` in Imports
 
 Use selector `<custom-crousel></custom-crousel>`
 
-`[slidesData]` to insert Data in crousel
+`[slidesData]` to insert Data in crousel. Declare your variable with `Slides[]` type
 
-`[carouselConfig]` to use its COnfiguration
+`[carouselConfig]` to use its Configuration
 
 Use `<ng-template>` if your using card-crousel
 
@@ -75,6 +75,18 @@ carouselConfig: Configuration = {
         hoverDotsBackgroundColor: '#254125',
       },
     },
+```
+
+## Example of Image Carousel Data
+
+```
+  dataForSlides: Slides[] = [
+    { id: 1, image: './assets/image/image-1.jpg' },
+    { id: 2, image: './assets/image/image-2.jpg' },
+    { id: 3, image: './assets/image/image-3.jpg' },
+    { id: 4, image: './assets/image/image-4.jpg' },
+  ];
+
 ```
 
 ## Example Card Crousel

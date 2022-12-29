@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Configuration } from 'projects/custom-carousel/src/model/class';
+import { Configuration } from 'projects/custom-carousel/dist/model/class';
+// import { Configuration } from 'projects/custom-carousel/src/model/class';
 
 @Component({
   selector: 'app-samplecrousel',
@@ -14,9 +15,9 @@ export class SamplecrouselComponent implements OnInit {
     { id: 3, image: './assets/image/image-3.jpg' },
     { id: 4, image: './assets/image/image-4.jpg' },
   ];
-  cardData: any = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  cardData: any = [10,20,45,47,12,14,74,5];
   carouselConfig: Configuration = {
-    type: 'image',
+    type: 'card',
     dots: {
       show: true,
       // showImage: true,

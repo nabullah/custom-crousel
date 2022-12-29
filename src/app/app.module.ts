@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CustomCarouselModule } from 'projects/custom-carousel/src/public-api';
+import { CustomCarouselModule } from 'projects/custom-carousel/dist';
+// import { CustomCarouselModule } from 'projects/custom-carousel/dist/public-api';
+// import { CustomCarouselModule } from 'projects/custom-carousel/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

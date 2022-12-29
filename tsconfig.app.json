@@ -11,5 +11,13 @@
   ],
   "include": [
     "src/**/*.d.ts"
-  ]
+  ],
+  "paths": {
+    "my-lib": [
+      "../dist"
+    ],
+    "my-lib/*": [
+      "../dist/*"
+    ]
+  }
 }

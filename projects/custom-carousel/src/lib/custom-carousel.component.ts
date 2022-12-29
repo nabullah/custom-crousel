@@ -7,7 +7,7 @@ import { Configuration } from "../model/class";
   templateUrl: "./custom-carousel.component.html",
   styleUrls: ["./custom-carousel.component.scss"],
 })
-export class CustomCarouselComponent implements OnInit, AfterViewInit  {
+export class CustomCarouselComponent implements OnInit, AfterViewInit {
   curSlide: number = 0;
   maxSlide!: number;
   allSlides!: any;
@@ -35,11 +35,11 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
   @Input() slidesData!: Slides[];
   @Input() carouselConfig!: Config;
   @Input() customTemplate!: TemplateRef<any>;
-  @HostListener("window:resize", ["$event"])
-  onResize(event: any) {
-    this.windowSize = event.target.innerWidth;
-    this.checkWidth();
-  }
+  // @HostListener("window:resize", ["$event"])
+  // onResize(event: any) {
+  //   this.windowSize = event.target.innerWidth;
+  //   this.checkWidth();
+  // }
 
   constructor() {
     // empty
@@ -75,8 +75,8 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
 
     // console.log('carouselConfig', this.carouselConfig);
     // console.log('Configuration', Configuration);
-    this.containerWidth = this.container[0].offsetWidth;
-    this.setParams(this.windowSize);
+    this.containerWidth = window.innerWidth;
+    this.setParams(this.containerWidth);
   }
   ngOnInit(): void {
     /**
@@ -342,4 +342,3 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
     }
   }
 }
-
