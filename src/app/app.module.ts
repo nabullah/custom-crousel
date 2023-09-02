@@ -5,8 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SamplecrouselComponent } from './samplecrousel/samplecrousel.component';
-import { CustomCarouselModule } from 'projects/custom-carousel/src/public-api';
-// import { CustomCarouselModule } from 'projects/custom-carousel/dist';
+
+//node module
+// import { CustomCarouselModule } from 'custom-carousel';
+
+//src
+// import { CustomCarouselModule } from 'projects/custom-carousel/src/lib/custom-carousel.module';
+
+//Dist
+import { CustomCarouselModule } from 'projects/custom-carousel/dist';
 
 @NgModule({
   declarations: [

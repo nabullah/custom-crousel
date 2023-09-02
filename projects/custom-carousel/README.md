@@ -6,6 +6,10 @@ Light Weight Configurable Carousel
 
 -- Bootstrap Icons v1.10.2
 
+## Stackblitz
+
+-- https://stackblitz-starters-yamn4f.stackblitz.io
+
 ## USE --
 
 Add `import { CustomCarouselModule } from 'custom-carousel'` in you module.
@@ -21,18 +25,6 @@ Use selector `<custom-crousel></custom-crousel>`
 Use `<ng-template>` if your using card-crousel
 
 ## Example --
-
-```sh
-<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig" [customTemplate]="childTemplate">
-    <ng-template #childTemplate>
-        <ng-container *ngFor="let item of cardData">
-            <div class="slide-card">
-            <!-- code here  -->
-            </div>
-        </ng-container>
-    </ng-template>
-</custom-crousel>
-```
 
 Exapmle Config
 
@@ -88,6 +80,9 @@ carouselConfig: Configuration = {
   ];
 
 ```
+## Example Image Crousel
+
+`<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"></custom-crousel>`
 
 ## Example Card Crousel
 
@@ -104,10 +99,6 @@ carouselConfig: Configuration = {
      </ng-container>
  </ng-template>
 ```
-
-## Example Image Crousel
-
-`<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"></custom-crousel>`
 
 ```sh
 ## You can take reference from samplecrousel component as example
