@@ -1,6 +1,6 @@
 {
   "name": "custom-crousel",
-  "version": "0.1.0",
+  "version": "13.0.0",
   "description": "Light Weight Configurable Carousel",
   "scripts": {
     "ng": "ng",
