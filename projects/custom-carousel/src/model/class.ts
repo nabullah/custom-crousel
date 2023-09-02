@@ -12,24 +12,24 @@ import {
  */
 export class Configuration {
   type: CarouselType = 'image';
-  dots: Dots = {
+  dots?: Dots = {
     show: true,
 
     showImage: false,
   };
 
-  setTimer: Timer = {
+  setTimer?: Timer = {
     show: false,
     time: 2,
     direction: 'forward',
   };
 
-  transition: Transition = {
+  transition?: Transition = {
     translate: true,
     fadeIn: false,
   };
 
-  styling: Styling = {
+  styling?: Styling = {
     button: {
       hideButton: false,
       color: '#fff',
