@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SamplecrouselComponent } from './samplecrousel/samplecrousel.component';
 
 const routes: Routes = [
-  { path: 'samplecrousel', component: SamplecrouselComponent },
+  { path: '', component: SamplecrouselComponent },
 ];
 
 @NgModule({

@@ -7,7 +7,7 @@ import { Configuration } from "../model/class";
   templateUrl: "./custom-carousel.component.html",
   styleUrls: ["./custom-carousel.component.scss"],
 })
-export class CustomCarouselComponent implements OnInit, AfterViewInit  {
+export class CustomCarouselComponent implements OnInit, AfterViewInit {
   curSlide: number = 0;
   maxSlide!: number;
   allSlides!: any;
@@ -35,11 +35,11 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
   @Input() slidesData!: Slides[];
   @Input() carouselConfig!: Config;
   @Input() customTemplate!: TemplateRef<any>;
-  @HostListener("window:resize", ["$event"])
-  onResize(event: any) {
-    this.windowSize = event.target.innerWidth;
-    this.checkWidth();
-  }
+  // @HostListener("window:resize", ["$event"])
+  // onResize(event: any) {
+  //   this.windowSize = event.target.innerWidth;
+  //   this.checkWidth();
+  // }
 
   constructor() {
     // empty
@@ -65,7 +65,7 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
      * Timer Setting
      */
     if (this.carouselConfig?.setTimer?.show) {
-      this.autoChangeSlide(this.carouselConfig.setTimer.time!, this.carouselConfig.setTimer.direction!);
+      this.autoChangeSlide(this.carouselConfig.setTimer.time!, this.carouselConfig?.setTimer.direction!);
     }
     if (this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor === undefined || this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor === null) {
       this.hoverBackgroundColorDots = "red";
@@ -75,8 +75,8 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
 
     // console.log('carouselConfig', this.carouselConfig);
     // console.log('Configuration', Configuration);
-    this.containerWidth = this.container[0].offsetWidth;
-    this.setParams(this.windowSize);
+    this.containerWidth = window.innerWidth;
+    this.setParams(this.containerWidth);
   }
   ngOnInit(): void {
     /**
@@ -95,9 +95,15 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
       this.curSlide++;
     }
     this.allSlides.forEach((slide: any, index: number) => {
-      if ((this.carouselConfig?.transition?.translate !== undefined && this.carouselConfig?.transition?.translate) || (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.translate)) {
+      if (
+        (this.carouselConfig?.transition?.translate !== undefined && this.carouselConfig?.transition?.translate) ||
+        (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.translate)
+      ) {
         slide.style.transform = `translateX(${100 * (index - this.curSlide)}%)`;
-      } else if ((this.carouselConfig?.transition?.fadeIn !== undefined && this.carouselConfig?.transition?.translate === undefined) || (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.fadeIn)) {
+      } else if (
+        (this.carouselConfig?.transition?.fadeIn !== undefined && this.carouselConfig?.transition?.translate === undefined) ||
+        (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.fadeIn)
+      ) {
         if (index === this.curSlide) {
           slide.style.opacity = 1;
         } else {
@@ -117,9 +123,15 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
       this.curSlide--;
     }
     this.allSlides.forEach((slide: any, index: any) => {
-      if ((this.carouselConfig?.transition?.translate !== undefined && this.carouselConfig?.transition?.translate) || (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.translate)) {
+      if (
+        (this.carouselConfig?.transition?.translate !== undefined && this.carouselConfig?.transition?.translate) ||
+        (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.translate)
+      ) {
         slide.style.transform = `translateX(${100 * (index - this.curSlide)}%)`;
-      } else if ((this.carouselConfig?.transition?.fadeIn !== undefined && this.carouselConfig?.transition?.translate === undefined) || (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.fadeIn)) {
+      } else if (
+        (this.carouselConfig?.transition?.fadeIn !== undefined && this.carouselConfig?.transition?.translate === undefined) ||
+        (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.fadeIn)
+      ) {
         if (index === this.curSlide) {
           slide.style.opacity = 1;
         } else {
@@ -151,7 +163,7 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
       }
       // Only Direction is given
     } else if (direction !== null && direction !== undefined) {
-      const timer = this.setting.setTimer.time!;
+      const timer = this.setting.setTimer?.time!;
       const timeInmilliSec = timer * 1000;
       if (direction === "backword") {
         setInterval(() => {
@@ -164,7 +176,7 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
       }
       // Only Time is Given
     } else if (time !== null && time !== undefined) {
-      const direction = this.setting.setTimer.direction!;
+      const direction = this.setting?.setTimer?.direction!;
       const timeInmilliSec = time * 1000;
       if (direction === "backword") {
         setInterval(() => {
@@ -177,8 +189,8 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
       }
       // Both Time and direction is not given
     } else {
-      const timer = this.setting.setTimer.time!;
-      const direction = this.setting.setTimer.direction;
+      const timer = this.setting.setTimer?.time!;
+      const direction = this.setting.setTimer?.direction;
       const timeInmilliSec = timer * 1000;
       if (direction === "backword") {
         setInterval(() => {
@@ -200,9 +212,15 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
   goToSlide(indx: number) {
     this.curSlide = indx;
     this.allSlides.forEach((slide: any, index: any) => {
-      if ((this.carouselConfig?.transition?.translate !== undefined && this.carouselConfig?.transition?.translate) || (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.translate)) {
+      if (
+        (this.carouselConfig?.transition?.translate !== undefined && this.carouselConfig?.transition?.translate) ||
+        (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.translate)
+      ) {
         slide.style.transform = `translateX(${100 * (index - this.curSlide)}%)`;
-      } else if ((this.carouselConfig?.transition?.fadeIn !== undefined && this.carouselConfig?.transition?.translate === undefined) || (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.fadeIn)) {
+      } else if (
+        (this.carouselConfig?.transition?.fadeIn !== undefined && this.carouselConfig?.transition?.translate === undefined) ||
+        (this.carouselConfig?.transition?.fadeIn === undefined && this.setting?.transition?.fadeIn)
+      ) {
         if (index === this.curSlide) {
           slide.style.opacity = 1;
         } else {
@@ -221,7 +239,7 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
     if (this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor !== undefined || this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor !== null) {
       this.dots[index].style.backgroundColor = this.carouselConfig.styling?.dots?.hoverDotsBackgroundColor;
     } else {
-      this.dots[index].style.backgroundColor = this.setting.styling.dots?.hoverDotsBackgroundColor;
+      this.dots[index].style.backgroundColor = this.setting.styling?.dots?.hoverDotsBackgroundColor;
     }
   }
 
@@ -234,7 +252,7 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
     if (this.carouselConfig.styling?.dots?.backgroundColor !== undefined || this.carouselConfig.styling?.dots?.backgroundColor !== null) {
       this.dots[index].style.backgroundColor = this.carouselConfig.styling?.dots?.backgroundColor;
     } else {
-      this.dots[index].style.backgroundColor = this.setting.styling.dots?.backgroundColor;
+      this.dots[index].style.backgroundColor = this.setting.styling?.dots?.backgroundColor;
     }
   }
 
@@ -342,4 +360,3 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit  {
     }
   }
 }
-

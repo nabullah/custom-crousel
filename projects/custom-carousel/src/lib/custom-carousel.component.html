@@ -1,5 +1,5 @@
 <!-- slider container -->
-<ng-container *ngIf="carouselConfig.type == 'image'">
+<ng-container *ngIf="carouselConfig?.type == 'image'">
     <div class="crousel-body">
         <div class="slider" [ngStyle]="{
         'border-radius': carouselConfig.styling?.borderRadius ? carouselConfig.styling?.borderRadius: '',
@@ -20,8 +20,8 @@
                     'border': carouselConfig.styling?.button?.border ? carouselConfig.styling?.button?.border: ''
                 }">
                 <i [class]="carouselConfig.styling?.button?.rightIcon ? carouselConfig.styling?.button?.rightIcon: 'bi bi-arrow-right'"
-                    [ngStyle]="{'color':carouselConfig.styling?.button?.color ? carouselConfig.styling?.button?.color:setting.styling.button?.color,
-                                'font-size':carouselConfig.styling?.button?.fontSize ? carouselConfig.styling?.button?.fontSize:setting.styling.button?.fontSize}"></i>
+                    [ngStyle]="{'color':carouselConfig.styling?.button?.color ? carouselConfig.styling?.button?.color:setting.styling?.button?.color,
+                                'font-size':carouselConfig.styling?.button?.fontSize ? carouselConfig.styling?.button?.fontSize:setting.styling?.button?.fontSize}"></i>
             </button>
 
             <button class="btn btn-prev" (click)="previousSlide()" *ngIf="!(carouselConfig.styling?.button?.hideButton)"
@@ -33,8 +33,8 @@
             }">
 
                 <i [class]="carouselConfig.styling?.button?.leftIcon ? carouselConfig.styling?.button?.leftIcon: 'bi bi-arrow-left'"
-                    [ngStyle]="{'color':carouselConfig.styling?.button?.color ? carouselConfig.styling?.button?.color:setting.styling.button?.color,
-                                'font-size':carouselConfig.styling?.button?.fontSize ? carouselConfig.styling?.button?.fontSize:setting.styling.button?.fontSize}"></i>
+                    [ngStyle]="{'color':carouselConfig.styling?.button?.color ? carouselConfig.styling?.button?.color:setting.styling?.button?.color,
+                                'font-size':carouselConfig.styling?.button?.fontSize ? carouselConfig.styling?.button?.fontSize:setting.styling?.button?.fontSize}"></i>
             </button>
 
             <div class="dots" *ngIf="carouselConfig.dots?.show">
@@ -64,7 +64,7 @@
     </div>
 </ng-container>
 
-<ng-container *ngIf="carouselConfig.type == 'card'">
+<ng-container *ngIf="carouselConfig?.type == 'card'">
     <div id="container-fluid">
         <div id="slider-container">
             <button class="card-buttons" (click)="slideLeft()" *ngIf="!(carouselConfig.styling?.button?.hideButton)"
@@ -76,8 +76,8 @@
         }">
 
                 <i [class]="carouselConfig.styling?.button?.leftIcon ? carouselConfig.styling?.button?.leftIcon: 'bi bi-arrow-left'"
-                    [ngStyle]="{'color':carouselConfig.styling?.button?.color ? carouselConfig.styling?.button?.color:setting.styling.button?.color,
-                            'font-size':carouselConfig.styling?.button?.fontSize ? carouselConfig.styling?.button?.fontSize:setting.styling.button?.fontSize}"></i>
+                    [ngStyle]="{'color':carouselConfig.styling?.button?.color ? carouselConfig.styling?.button?.color:setting.styling?.button?.color,
+                            'font-size':carouselConfig.styling?.button?.fontSize ? carouselConfig.styling?.button?.fontSize:setting.styling?.button?.fontSize}"></i>
             </button>
 
             <div id="card-slider">
@@ -92,8 +92,8 @@
                 'border': carouselConfig.styling?.button?.border ? carouselConfig.styling?.button?.border: ''
             }">
                 <i [class]="carouselConfig.styling?.button?.rightIcon ? carouselConfig.styling?.button?.rightIcon: 'bi bi-arrow-right'"
-                    [ngStyle]="{'color':carouselConfig.styling?.button?.color ? carouselConfig.styling?.button?.color:setting.styling.button?.color,
-                            'font-size':carouselConfig.styling?.button?.fontSize ? carouselConfig.styling?.button?.fontSize:setting.styling.button?.fontSize}"></i>
+                    [ngStyle]="{'color':carouselConfig.styling?.button?.color ? carouselConfig.styling?.button?.color:setting.styling?.button?.color,
+                            'font-size':carouselConfig.styling?.button?.fontSize ? carouselConfig.styling?.button?.fontSize:setting.styling?.button?.fontSize}"></i>
             </button>
         </div>
     </div>

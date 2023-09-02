@@ -1,9 +1,10 @@
 {
   "name": "custom-carousel",
-  "version": "0.0.6",
+  "version": "0.0.22",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
-    "@angular/core": "^13.2.0"
+    "@angular/core": "^13.2.0",
+    "bootstrap-icons": "1.10.2"
   },
   "private": false,
   "author": "Nabullah Ansari",
@@ -26,5 +27,10 @@
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nabullah/custom-crousel/issues",
+    "email": "nabullarock@gmail.com"
   }
 }
