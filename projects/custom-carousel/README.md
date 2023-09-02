@@ -8,7 +8,7 @@ Light Weight Configurable Carousel
 
 ## Stackblitz
 
--- https://stackblitz-starters-yamn4f.stackblitz.io
+-- https://stackblitz.com/edit/stackblitz-starters-yamn4f?file=src%2Fmain.ts
 
 ## USE --
 
