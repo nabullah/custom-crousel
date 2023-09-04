@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { Slides } from "custom-carousel/model";
+// import { Slides } from "custom-carousel/model";
 //Node Modules
-// import { Configuration } from 'custom-carousel/model/class';
+import { Configuration } from 'custom-carousel/model/class';
 
 //Dist
-import { Configuration } from "projects/custom-carousel/dist/model/class";
+// import { Configuration } from "projects/custom-carousel/dist/model/class";
 
 //Src
 // import { Configuration } from "projects/custom-carousel/src/model/class";
@@ -16,7 +16,7 @@ import { Configuration } from "projects/custom-carousel/dist/model/class";
 })
 export class SamplecrouselComponent implements OnInit {
   constructor() {}
-  crouselData: Slides[] = [
+  crouselData: any[] = [
     { id: 1, image: "./assets/image/image-1.jpg" },
     { id: 2, image: "./assets/image/image-2.jpg" },
     { id: 3, image: "./assets/image/image-3.jpg" },
