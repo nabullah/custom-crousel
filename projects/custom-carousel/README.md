@@ -80,9 +80,28 @@ carouselConfig: Configuration = {
   ];
 
 ```
+
 ## Example Image Crousel
 
 `<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"></custom-crousel>`
+
+## Example of Card Carousel Data
+
+```
+ Card carousel data input should be in array or array of objects according to your needs.
+ For example -
+ data = [10, 20, 45, 47, 12, 14, 74, 5];
+
+ OR
+
+ data = [
+  {id: 1, name: "Joy", desc: "This is my name"},
+  {id: 2, name: "Joy - 1", desc: "This is my name"},
+  {id: 3, name: "Joy - 2", desc: "This is my name"},
+  {id: 4, name: "Joy - 3", desc: "This is my name"},
+ ];
+
+```
 
 ## Example Card Crousel
 

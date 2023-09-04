@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
+// import { Slides } from "custom-carousel/model";
 //Node Modules
-// import { Configuration } from 'custom-carousel/model/class';
+import { Configuration } from 'custom-carousel/model/class';
 
 //Dist
-import { Configuration } from "projects/custom-carousel/dist/model/class";
+// import { Configuration } from "projects/custom-carousel/dist/model/class";
 
 //Src
 // import { Configuration } from "projects/custom-carousel/src/model/class";
