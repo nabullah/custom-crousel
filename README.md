@@ -6,6 +6,10 @@ Light Weight Configurable Carousel
 
 -- Bootstrap Icons v1.10.2
 
+## Stackblitz
+
+-- https://stackblitz.com/edit/stackblitz-starters-yamn4f?file=src%2Fmain.ts
+
 ## USE --
 
 Add `import { CustomCarouselModule } from 'custom-carousel'` in you module.
@@ -21,18 +25,6 @@ Use selector `<custom-crousel></custom-crousel>`
 Use `<ng-template>` if your using card-crousel
 
 ## Example --
-
-```sh
-<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig" [customTemplate]="childTemplate">
-    <ng-template #childTemplate>
-        <ng-container *ngFor="let item of cardData">
-            <div class="slide-card">
-            <!-- code here  -->
-            </div>
-        </ng-container>
-    </ng-template>
-</custom-crousel>
-```
 
 Exapmle Config
 
@@ -89,6 +81,28 @@ carouselConfig: Configuration = {
 
 ```
 
+## Example Image Crousel
+
+`<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"></custom-crousel>`
+
+## Example of Card Carousel Data
+
+```
+ Card carousel data input should be in array or array of objects according to your needs.
+ For example -
+ data = [10, 20, 45, 47, 12, 14, 74, 5];
+
+ OR
+
+ data = [
+  {id: 1, name: "Joy", desc: "This is my name"},
+  {id: 2, name: "Joy - 1", desc: "This is my name"},
+  {id: 3, name: "Joy - 2", desc: "This is my name"},
+  {id: 4, name: "Joy - 3", desc: "This is my name"},
+ ];
+
+```
+
 ## Example Card Crousel
 
     `<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"[customTemplate]="childTemplate"></custom-crousel>`
@@ -104,10 +118,6 @@ carouselConfig: Configuration = {
      </ng-container>
  </ng-template>
 ```
-
-## Example Image Crousel
-
-`<custom-crousel [slidesData]="crouselData" [carouselConfig]="carouselConfig"></custom-crousel>`
 
 ```sh
 ## You can take reference from samplecrousel component as example
