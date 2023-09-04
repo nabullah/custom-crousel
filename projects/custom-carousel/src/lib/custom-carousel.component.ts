@@ -287,15 +287,23 @@ export class CustomCarouselComponent implements OnInit, AfterViewInit {
       this.currentPosition -= this.slidesPerPage;
     }
     this.currentMargin = -this.currentPosition * (100 / this.slidesPerPage);
-    this.cardSlider[0].style.marginLeft = this.currentMargin + "%";
+    if (this.cardSlider[0]) {
+      this.cardSlider[0].style.marginLeft = this.currentMargin + "%";
+    }
     if (this.currentPosition > 0) {
-      this.cardButtons[0].classList.remove("inactive");
+      if (this.cardButtons[0]) {
+        this.cardButtons[0].classList.remove("inactive");
+      }
     }
     if (this.currentPosition < this.slidesCount) {
-      this.cardButtons[1].classList.remove("inactive");
+      if (this.cardButtons[1]) {
+        this.cardButtons[1].classList.remove("inactive");
+      }
     }
     if (this.currentPosition >= this.slidesCount) {
-      this.cardButtons[1].classList.add("inactive");
+      if (this.cardButtons[1]) {
+        this.cardButtons[1].classList.add("inactive");
+      }
     }
   }
 
